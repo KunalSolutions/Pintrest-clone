@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinterest Lite</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>Pinterest Lite</h1>
+    <button id="addPinBtn" title="Add New Pin"><i class="fa-solid fa-plus"></i></button>
+  </div>
+  <div class="header-right">
+    <input type="text" id="searchInput" placeholder="Search Pins..."/>
+    <button id="themeToggle" title="Toggle Dark/Light Mode"><i class="fa-solid fa-moon"></i></button>
+    <button id="allPinsBtn" class="tab-btn active">All</button>
+    <button id="likedPinsBtn" class="tab-btn"><i class="fa-solid fa-heart"></i></button>
+    <button id="savedPinsBtn" class="tab-btn"><i class="fa-solid fa-bookmark"></i></button>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <p id="empty">No Pins Found</p>
+</main>
+
+<!-- Add Pin Modal -->
+<div id="addModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeAdd" class="close">&times;</button>
+    <h2>Add New Pin</h2>
+    <form id="addForm">
+      <input type="text" id="imgUrl" placeholder="Image URL" required/>
+      <input type="text" id="imgTitle" placeholder="Title" required/>
+      <input type="text" id="imgLink" placeholder="Optional Link"/>
+      <button type="submit">Add Pin</button>
+    </form>
+  </div>
+</div>
+
+<!-- View Pin Modal -->
+<div id="viewModal" class="modal hidden" role="dialog" aria-hidden="true">
+  <div class="modal-content view-modal">
+    <button id="closeView" class="close">&times;</button>
+    <div class="img-container">
+      <img id="viewImg" src="" alt="Pin Image"/>
+      <!-- <div id="viewTitle" class="title-overlay"></div> -->
+    </div>
+    <a id="viewLink" href="#" target="_blank">Open Link</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
